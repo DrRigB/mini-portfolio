@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name – Mini Portfolio</title>
+<link rel="stylesheet" href="styles/style.css">
+<meta name="description" content="Senior student at MCCTC passionate about web development, design, and creating engaging digital experiences.">
+</head>
+<body id="top">
+<header class="site-header">
+<nav class="nav container" aria-label="Primary">
+<a class="logo" href="#top">Your Name</a>
+<ul class="nav-list">
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact" class="btn">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<main id="content">
+<section id="hero" class="hero container">
+<div class="hero-text">
+<h1>Your Name</h1>
+<p class="tagline">Senior at MCCTC • Web Dev & UI Designer</p>
+<a class="btn" href="#projects">See my work</a>
+</div>
+<div class="hero-media">
+<img src="images/headshot.jpg" alt="Portrait of Your Name">
+</div>
+</section>
+
+<section id="about" class="container">
+<header><h2>About</h2></header>
+<article class="about-grid">
+<p>I'm a senior student passionate about web development and design. I love building responsive websites and learning new technologies. My goal is to create user-friendly digital experiences that solve real problems. Currently expanding my skills in modern web frameworks and design principles.</p>
+<div>
+<h3>Skills</h3>
+<ul class="pill-list">
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>Git & GitHub</li>
+<li>Responsive Design</li>
+<li>UI/UX Basics</li>
+<li>Problem Solving</li>
+</ul>
+</div>
+</article>
+</section>
+
+<section id="projects" class="container">
+<header><h2>Projects</h2></header>
+<div class="grid">
+<article class="card">
+<img src="images/project1.jpg" alt="Screenshot of Project 1">
+<div class="card-body">
+<h3>Project One</h3>
+<p>A responsive web application that demonstrates modern HTML5 and CSS3 techniques. Built with accessibility and user experience in mind.</p>
+<a class="btn-outline" href="https://github.com/your-username/project-one" target="_blank" rel="noopener">GitHub</a>
+</div>
+</article>
+
+<article class="card">
+<img src="images/project2.jpg" alt="Screenshot of Project 2">
+<div class="card-body">
+<h3>Project Two</h3>
+<p>An interactive portfolio showcase featuring semantic HTML structure and CSS Grid layouts. Focused on clean code and maintainability.</p>
+<a class="btn-outline" href="https://github.com/your-username/project-two" target="_blank" rel="noopener">GitHub</a>
+</div>
+</article>
+</div>
+</section>
+
+<section id="contact" class="container">
+<header><h2>Contact</h2></header>
+<address>
+<p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+<p>GitHub: <a href="https://github.com/your-username" target="_blank" rel="noopener">@your-username</a></p>
+</address>
+</section>
+</main>
+
+<footer class="site-footer">
+<small>© <span id="year"></span> Your Name. Built with semantic HTML & external CSS.</small>
+</footer>
+
+<script>
+// Tiny progressive enhancement: set year
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+

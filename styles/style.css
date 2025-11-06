@@ -1,0 +1,77 @@
+/* 1) Design tokens */
+:root{
+--bg: #0f172a; /* slate-900 */
+--panel: #111827; /* gray-900 */
+--text: #e5e7eb; /* gray-200 */
+--muted:#94a3b8; /* slate-400 */
+--brand:#22d3ee; /* cyan-400 */
+--brand-2:#a78bfa; /* violet-400*/
+--radius: 14px;
+}
+
+/* 2) Base / resets */
+*{ box-sizing: border-box; }
+html,body{ margin:0; padding:0; }
+body{
+font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+background: linear-gradient(180deg, var(--bg), #020617);
+color: var(--text);
+line-height: 1.6;
+}
+
+/* 3) Layout helpers (CLASSES are reusable) */
+.container{ width: min(1100px, 92%); margin-inline:auto; }
+.grid{
+display:grid; gap:1.25rem;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* 4) Header & nav */
+.site-header{ position: sticky; top:0; background: rgba(2,6,23,.8); backdrop-filter: blur(8px); }
+.nav{ display:flex; align-items:center; justify-content:space-between; padding: .85rem 0; }
+.logo{ color:var(--text); text-decoration:none; font-weight:700; letter-spacing:.3px; }
+.nav-list{ display:flex; gap:1rem; list-style:none; margin:0; padding:0; }
+.nav-list a{ color:var(--text); text-decoration:none; padding:.5rem .9rem; border-radius:999px; }
+.nav-list a:hover{ background: rgba(167,139,250,.12); }
+
+/* 5) Hero (ID targets a one-off block) */
+#hero{
+display:grid; gap:1.25rem; align-items:center; padding: 3rem 0 2rem;
+grid-template-columns: 1.25fr .9fr;
+}
+.hero-text h1{ font-size: clamp(2rem, 4vw, 3rem); margin:.2rem 0; }
+.tagline{ color:var(--muted); margin-bottom:1rem; }
+.hero-media img{ width:100%; max-width:320px; border-radius: var(--radius); border:2px solid rgba(255,255,255,.08); }
+
+/* 6) About */
+.about-grid{ display:grid; grid-template-columns: 1.5fr 1fr; gap:1.25rem; }
+.pill-list{ display:flex; gap:.5rem; flex-wrap:wrap; padding:0; margin:0; list-style:none; }
+.pill-list li{ background:#0b1220; border:1px solid rgba(255,255,255,.08); padding:.4rem .7rem; border-radius:999px; }
+
+/* 7) Cards */
+.card{
+background: #0b1220; border:1px solid rgba(255,255,255,.08); border-radius: var(--radius);
+overflow:hidden; display:flex; flex-direction:column;
+}
+.card img{ width:100%; height:180px; object-fit:cover; }
+.card-body{ padding:1rem; }
+
+/* 8) Buttons */
+.btn, .btn-outline{
+display:inline-block; padding:.6rem 1rem; border-radius:999px; text-decoration:none;
+}
+.btn{ background:linear-gradient(90deg, var(--brand), var(--brand-2)); color:#041019; font-weight:700; }
+.btn-outline{ border:1px solid rgba(255,255,255,.3); color:var(--text); }
+.btn:hover{ filter:brightness(1.1); }
+.btn-outline:hover{ background: rgba(255,255,255,.06); }
+
+/* 9) Footer */
+.site-footer{ text-align:center; padding:2rem 0; color:var(--muted); }
+
+/* 10) Responsive tweaks */
+@media (max-width: 900px){
+#hero{ grid-template-columns: 1fr; text-align:center; }
+.hero-media{ order:-1; }
+.about-grid{ grid-template-columns: 1fr; }
+}
+
