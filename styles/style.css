@@ -19,6 +19,35 @@ color: var(--text);
 line-height: 1.6;
 }
 
+/* Animation classes */
+.fade-out {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth transitions for interactive elements */
+.pill-list li {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.pill-list li:hover {
+  background: #1a2332;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
 /* 3) Layout helpers (CLASSES are reusable) */
 .container{ width: min(1100px, 92%); margin-inline:auto; }
 .grid{
@@ -31,8 +60,9 @@ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 .nav{ display:flex; align-items:center; justify-content:space-between; padding: .85rem 0; }
 .logo{ color:var(--text); text-decoration:none; font-weight:700; letter-spacing:.3px; }
 .nav-list{ display:flex; gap:1rem; list-style:none; margin:0; padding:0; }
-.nav-list a{ color:var(--text); text-decoration:none; padding:.5rem .9rem; border-radius:999px; }
+.nav-list a{ color:var(--text); text-decoration:none; padding:.5rem .9rem; border-radius:999px; transition: all 0.3s ease; }
 .nav-list a:hover{ background: rgba(167,139,250,.12); }
+.nav-list a.active{ background: rgba(167,139,250,.2); color:var(--brand); }
 
 /* 5) Hero (ID targets a one-off block) */
 #hero{
