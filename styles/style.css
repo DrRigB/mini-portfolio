@@ -4,8 +4,8 @@
 --panel: #111827; /* gray-900 */
 --text: #e5e7eb; /* gray-200 */
 --muted:#94a3b8; /* slate-400 */
---brand:#22d3ee; /* cyan-400 */
---brand-2:#a78bfa; /* violet-400*/
+--brand:#67e8f9; /* cyan-300 - lighter */
+--brand-2:#c4b5fd; /* violet-300 - lighter */
 --radius: 14px;
 }
 
@@ -53,7 +53,16 @@ grid-template-columns: 1.25fr .9fr;
 background: #0b1220; border:1px solid rgba(255,255,255,.08); border-radius: var(--radius);
 overflow:hidden; display:flex; flex-direction:column;
 }
-.card img{ width:100%; height:180px; object-fit:cover; }
+.card img{ width:100%; height:220px; object-fit:cover; object-position:center; }
+
+/* Specific adjustments for individual project images */
+.card:first-child img{ 
+  transform: scale(1.8); /* Zoom in HR FitBot significantly */
+}
+.card:nth-child(2) img{ 
+  transform: scale(0.95); /* Slightly zoom out RecognEyes */
+}
+
 .card-body{ padding:1rem; }
 
 /* 8) Buttons */
@@ -61,14 +70,18 @@ overflow:hidden; display:flex; flex-direction:column;
 display:inline-block; padding:.6rem 1rem; border-radius:999px; text-decoration:none;
 }
 .btn{ background:linear-gradient(90deg, var(--brand), var(--brand-2)); color:#041019; font-weight:700; }
-.btn-outline{ border:1px solid rgba(255,255,255,.3); color:var(--text); }
+.btn-outline{ border:1px solid rgba(255,255,255,.5); color:#fff; }
 .btn:hover{ filter:brightness(1.1); }
 .btn-outline:hover{ background: rgba(255,255,255,.06); }
 
-/* 9) Footer */
+/* 9) Contact links */
+#contact a{ color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.3); }
+#contact a:hover{ border-bottom-color:#fff; }
+
+/* 10) Footer */
 .site-footer{ text-align:center; padding:2rem 0; color:var(--muted); }
 
-/* 10) Responsive tweaks */
+/* 11) Responsive tweaks */
 @media (max-width: 900px){
 #hero{ grid-template-columns: 1fr; text-align:center; }
 .hero-media{ order:-1; }
